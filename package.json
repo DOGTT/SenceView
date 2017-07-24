@@ -1,0 +1,19 @@
+{
+  "name": "sencecview",
+  "version": "1.0.0",
+  "description": "a web view of photos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DOGTT/SenceView.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DOGTT/SenceView/issues"
+  },
+  "homepage": "https://github.com/DOGTT/SenceView#readme"
+}
