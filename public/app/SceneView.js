@@ -26,8 +26,10 @@ var SceneView = function() {
         camera.lookAt(new THREE.Vector3(0, 0, 0));
         scene.add(camera);
 
+        orbit = new THREE.OrbitControls(camera, renderer.domElement);
         //light
         var ambient = new THREE.AmbientLight(0xcccccc);
+        orbit.target.set(0.0, 0.0, 0.0);
         scene.add(ambient);
 
         var geo = new THREE.BoxGeometry(200, 200, 200);
@@ -44,6 +46,7 @@ var SceneView = function() {
     function animate() {
         requestAnimationFrame(animate);
         render();
+        orbit.update();
         //stats.update();
     }
 
