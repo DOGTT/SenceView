@@ -1,6 +1,6 @@
 var SceneView = function() {
     //init
-    //rander
+
     var renderer;
     var c1_canvas_div;
     var scene, camera;
@@ -32,7 +32,7 @@ var SceneView = function() {
         orbit.target.set(0.0, 0.0, 0.0);
         scene.add(ambient);
 
-        var geo = new THREE.BoxGeometry(200, 200, 200);
+        var geo = new THREE.SphereGeometry(200, 200);
         var mat = new THREE.MeshPhongMaterial({
             color: 0xffff00,
             wireframe: true
@@ -49,7 +49,7 @@ var SceneView = function() {
         orbit.update();
         //stats.update();
     }
-
+    //rander
     function render() {
         renderer.render(scene, camera);
     }
