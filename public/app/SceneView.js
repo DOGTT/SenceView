@@ -21,14 +21,14 @@ var SceneView = function() {
         scene.fog = new THREE.Fog(0xff0000, 0, 2000);
         universeScene = new THREE.Scene();
         //camera
-        camera = new THREE.PerspectiveCamera(45, viewSize.x / viewSize.y, 1, 2000);
+        camera = new THREE.PerspectiveCamera(30, viewSize.x / viewSize.y, 1, 2000);
         camera.position.set(0, 0, 100);
         camera.lookAt(new THREE.Vector3(0, 0, 0));
         scene.add(camera);
 
         orbit = new THREE.OrbitControls(camera, renderer.domElement);
         //light
-        var ambient = new THREE.AmbientLight(0xcccccc);
+        var ambient = new THREE.AmbientLight(0xffffff);
         orbit.target.set(0.0, 0.0, 0.0);
         scene.add(ambient);
 
