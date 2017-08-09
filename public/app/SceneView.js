@@ -32,7 +32,7 @@ var SceneView = function() {
         orbit.target.set(0.0, 0.0, 0.0);
         scene.add(ambient);
 
-        var geo = new THREE.SphereGeometry(200, 200);
+        var geo = new THREE.SphereGeometry(200, 200, 100);
         var mat = new THREE.MeshPhongMaterial({
             color: 0xffff00,
             wireframe: true
