@@ -30,19 +30,22 @@ var SceneView = function() {
         //light
         var ambient = new THREE.AmbientLight(0xffffff);
         orbit.target.set(0.0, 0.0, 0.0);
-        scene.add(ambient);
+        //scene.add(ambient);
         var plight = new THREE.PointLight(0xffffff);
         plight.position.set(0, 0, 0);
         scene.add(plight);
 
         var geo = new THREE.SphereGeometry(200, 200, 100);
         var loader = new THREE.TextureLoader();
-        var mat = new THREE.MeshBasicMaterial({
-            color: 0xffff00,
-            wireframe: false
+        var mat = new THREE.MeshBasicMaterial();
+        loader.load("test.jpg", function(tex) {
+            mat.map = tex;
+            mat.needsUpdate = true;
+            mat.side = THREE.BackSide;
         });
         var ma = new THREE.Mesh(geo, mat);
         scene.add(ma);
+
     }
     init();
     animate();
