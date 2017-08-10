@@ -1,6 +1,6 @@
 var SceneView = function() {
     //init
-
+    if (!Detector.webgl) Detector.addGetWebGLMessage();
     var renderer;
     var c1_canvas_div;
     var scene, camera;
