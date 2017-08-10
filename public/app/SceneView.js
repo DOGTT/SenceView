@@ -15,10 +15,10 @@ var SceneView = function() {
         renderer.sortObjects = false;
         c1_canvas_div = document.getElementById('viewBox');
         c1_canvas_div.appendChild(renderer.domElement);
-
+        renderer.setClearColor(0xffffff);
         //scene
         scene = new THREE.Scene();
-        scene.fog = new THREE.Fog(0xff0000, 0, 2000);
+        //scene.fog = new THREE.Fog(0xff0000, 0, 2000);
         universeScene = new THREE.Scene();
         //camera
         camera = new THREE.PerspectiveCamera(30, viewSize.x / viewSize.y, 1, 2000);
@@ -31,11 +31,15 @@ var SceneView = function() {
         var ambient = new THREE.AmbientLight(0xffffff);
         orbit.target.set(0.0, 0.0, 0.0);
         scene.add(ambient);
+        var plight = new THREE.PointLight(0xffffff);
+        plight.position.set(0, 0, 0);
+        scene.add(plight);
 
         var geo = new THREE.SphereGeometry(200, 200, 100);
-        var mat = new THREE.MeshPhongMaterial({
+        var loader = new THREE.TextureLoader();
+        var mat = new THREE.MeshBasicMaterial({
             color: 0xffff00,
-            wireframe: true
+            wireframe: false
         });
         var ma = new THREE.Mesh(geo, mat);
         scene.add(ma);
