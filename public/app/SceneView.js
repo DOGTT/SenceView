@@ -7,6 +7,15 @@ var SceneView = function() {
     var viewSize = new THREE.Vector2(window.innerWidth, window.innerHeight);
     var windowHalfX = viewSize.x / 2;
     var windowHalfY = viewSize.y / 2;
+    var stat, stat_div;
+
+    function addStat() {
+        stat_div = document.getElementById('c_stat');
+        stat = new Stats();
+        stat.dom.style.position = 'relative';
+        stat_div.appendChild(stat.dom);
+    }
+    addStat();
 
     function init() {
         renderer = new THREE.WebGLRenderer();
@@ -58,7 +67,9 @@ var SceneView = function() {
     }
     //rander
     function render() {
+        stat.begin();
         renderer.render(scene, camera);
+        stat.end();
     }
     //show
 }();
